@@ -45,7 +45,7 @@ class MyFavoritesController < ApplicationController
     end
 
     def my_favorite_params
-        params.permit(:title, :description, :type, :image_url)
+        params.permit(:title, :description, :category, :image_url)
     end
 
     def render_not_found_response
