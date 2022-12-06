@@ -5,7 +5,7 @@ export default function HeroSeaction() {
         <div className="container hero-section">
             <h1>Welcome to SaveMyFavs</h1>
             <p>Create a collection of your favorite memories</p>
-            <p>Update or delete them; it's all up to you!</p>
+            <p>You can even update or delete them; it's all up to you!</p>
         </div>
     )
 }
