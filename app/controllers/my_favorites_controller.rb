@@ -2,7 +2,7 @@ class MyFavoritesController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
     def index
         my_favorites = MyFavorite.all
-        render json: my_favorites
+        render json: my_favorites, except: [:created_at, :updated_at]
     end
 
     def show
