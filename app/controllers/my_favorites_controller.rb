@@ -31,7 +31,12 @@ class MyFavoritesController < ApplicationController
 
     def destroy
         my_favorite = find_my_favorite
-        
+        if my_favorite
+            my_favorite.destroy
+            head :no_content
+        else
+            render_not_found_response
+        end
     end
 
     private
