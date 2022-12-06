@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function HeroSeaction() {
+export default function HeroSection() {
     return (
         <div className="container hero-section">
             <h1>Welcome to SaveMyFavs</h1>
