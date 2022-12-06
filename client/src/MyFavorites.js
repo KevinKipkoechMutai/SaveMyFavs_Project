@@ -1,4 +1,5 @@
 import React from "react"
+import Card from "./Card"
 
 export default function MyFavorites() {
     return (
@@ -7,7 +8,9 @@ export default function MyFavorites() {
             <div className="my-favs-header">
                 <h1>My Favorites</h1>
                 <button className="btn">Create New Fav</button>
-                <div className="cards-section"></div>
+            </div>
+            <div className="cards-section">
+                    <Card />
             </div>
         </div>
     )
