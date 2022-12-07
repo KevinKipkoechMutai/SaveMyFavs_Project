@@ -2,7 +2,8 @@
 import React from 'react'
 import Navbar from './Navbar'
 import HeroSection from './HeroSection'
-import MyFavorites from './MyFavorites';
+import MyFavorites from './MyFavorites'
+import Footer from './Footer'
 
 function App() {
   
@@ -11,6 +12,7 @@ function App() {
       <Navbar />
       <HeroSection />
       <MyFavorites />
+      <Footer />
     </div>
   );
 }
