@@ -63,6 +63,7 @@ code {
   height: 400px;
   flex-wrap: wrap;
   border-radius: 5px;
+  margin: 10px;
 }
 
 .card--details {
@@ -95,9 +96,7 @@ code {
 
 .cards--section {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
-  gap: 50px;
   overflow: auto;
-  justify-content: center;
+  flex-wrap: wrap;
 }
