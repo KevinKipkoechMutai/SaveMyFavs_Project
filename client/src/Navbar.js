@@ -4,8 +4,8 @@ export default function Navbar() {
         <header className="header">
             <h1>SaveMyFavs</h1>
             <nav className="nav">
-                <button className="btn">Signup</button>
-                <button className="btn">Login</button>
+                <button className="btn btn-primary">Signup</button>
+                <button className="btn btn-primary">Login</button>
             </nav>
         </header>
     )

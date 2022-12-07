@@ -26,7 +26,7 @@ export default function MyFavorites() {
         <div className="my-favs">
             <div className="my-favs-header">
                 <h1>My Favorites</h1>
-                <button className="btn">Add New Fav</button>
+                <button className="btn btn-primary">Add New Fav</button>
             </div>
             <div className="cards--section">
                     {cardInfo}

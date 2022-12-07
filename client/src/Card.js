@@ -1,4 +1,5 @@
 import React from "react"
+import EditData from "./EditData"
 
 export default function Card({id, image_url, title, category, description, cardData, setCardData}) {
     
@@ -23,8 +24,13 @@ export default function Card({id, image_url, title, category, description, cardD
             </div>
             <p className="desc">{description}</p>
             <div className="card--btn">
-                <button className="btn">Edit</button>
-                <button className="btn red" onClick={() => handleDelete(id)}>Delete</button>
+                <EditData 
+                    title = {title}
+                    category = {category}
+                    description = {description}
+                    image_url = {image_url}
+                />
+                <button className="btn btn-primary red btn-danger" onClick={() => handleDelete(id)}>Delete</button>
             </div>
         </div>
     )
