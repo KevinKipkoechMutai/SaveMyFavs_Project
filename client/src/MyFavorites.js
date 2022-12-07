@@ -1,5 +1,6 @@
 import React from "react"
 import Card from "./Card"
+import CreateData from "./CreateData"
 
 export default function MyFavorites() {
     const [cardData, setCardData] = React.useState([])
@@ -26,7 +27,8 @@ export default function MyFavorites() {
         <div className="my-favs">
             <div className="my-favs-header">
                 <h1>My Favorites</h1>
-                <button className="btn btn-primary">Add New Fav</button>
+                <CreateData 
+                />
             </div>
             <div className="cards--section">
                     {cardInfo}

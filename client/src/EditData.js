@@ -2,19 +2,27 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-export default function EditData({title, category, description, image_url}) {
+export default function EditData({id, title, category, description, image_url}) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  function handleChange() {
+  const [val, setVal] = React.useState("")
 
-  }
+  
 
   function handleUpdate() {
-
-  }
+    fetch(`/my_favorites/${id}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(val)
+    },).then(res => {
+        console.log(res.status)
+        return res.json()
+    }).then(data=>console.log(data))}
 
   return (
     <>
@@ -29,7 +37,7 @@ export default function EditData({title, category, description, image_url}) {
           <form id='editform'>
           <div className="md:flex md:items-center mb-6">
                 <div className="md:w-1/3">
-                <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="title">
+                <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" htmlFor="title">
                     Title
                 </label>
                 </div>
@@ -39,7 +47,7 @@ export default function EditData({title, category, description, image_url}) {
             </div>
             <div className="md:flex md:items-center mb-6">
                 <div className="md:w-1/3">
-                <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="category">
+                <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" htmlFor="category">
                     Category
                 </label>
                 </div>
@@ -49,7 +57,7 @@ export default function EditData({title, category, description, image_url}) {
             </div>
             <div className="md:flex md:items-center mb-6">
                 <div className="md:w-1/3">
-                <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="description">
+                <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" htmlFor="description">
                     Description
                 </label>
                 </div>
@@ -59,7 +67,7 @@ export default function EditData({title, category, description, image_url}) {
             </div>
             <div className="md:flex md:items-center mb-6">
                 <div className="md:w-1/3">
-                <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="image_url">
+                <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" htmlFor="image_url">
                     Image Url
                 </label>
                 </div>
@@ -73,7 +81,7 @@ export default function EditData({title, category, description, image_url}) {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <button className='btn btn-primary' form='editmodal' onClick={handleUpdate} onChange={handleChange}>Update</button>
+          <button className='btn btn-primary' form='editmodal' onClick={handleUpdate}>Update</button>
         </Modal.Footer>
       </Modal>
     </>
