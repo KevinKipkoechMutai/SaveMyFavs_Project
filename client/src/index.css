@@ -104,3 +104,7 @@ footer {
   overflow: auto;
   flex-wrap: wrap;
 }
+
+.red {
+  background-color: red;
+}

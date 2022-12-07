@@ -11,11 +11,13 @@ export default function MyFavorites() {
       }, [])
 
     console.log(cardData)
-    const cardInfo = cardData.map((item) => {
+    const cardInfo = Array.from(cardData).map((item) => {
         return (
             <Card 
                 key = {item.id}
-                item = {item}
+                {...item}
+                cardData = {cardData}
+                setCardData = {setCardData}
             />
         )
     })
@@ -24,7 +26,7 @@ export default function MyFavorites() {
         <div className="my-favs">
             <div className="my-favs-header">
                 <h1>My Favorites</h1>
-                <button className="btn">Create New Fav</button>
+                <button className="btn">Add New Fav</button>
             </div>
             <div className="cards--section">
                     {cardInfo}
