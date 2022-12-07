@@ -2,7 +2,7 @@ class MyFavoritesController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
     def index
         my_favorites = MyFavorite.all
-        render json: my_favorites, except: [:created_at, :updated_at]
+        render json: my_favorites #, except: [:created_at, :updated_at]
     end
 
     def show
@@ -30,7 +30,7 @@ class MyFavoritesController < ApplicationController
     end
 
     def destroy
-        my_favorite = find_my_favorite
+        my_favorite = MyFavorite.find_by(id: params[:id])
         if my_favorite
             my_favorite.destroy
             head :no_content
@@ -41,7 +41,7 @@ class MyFavoritesController < ApplicationController
 
     private
     def find_my_favorite
-        MyFavorite.find(params[:id])
+        MyFavorite.find_by(id: params[:id])
     end
 
     def my_favorite_params
