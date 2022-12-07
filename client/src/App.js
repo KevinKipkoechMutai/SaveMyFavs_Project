@@ -5,7 +5,7 @@ import HeroSection from './HeroSection'
 import MyFavorites from './MyFavorites';
 
 function App() {
-
+  
   return (
     <div>
       <Navbar />

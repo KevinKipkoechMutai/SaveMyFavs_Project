@@ -97,5 +97,7 @@ code {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  gap: 30px;
+  gap: 50px;
+  overflow: auto;
+  justify-content: center;
 }
